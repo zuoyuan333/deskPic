@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zy.deskpic">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".ZyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/fun_a"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/fun_a"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DeskPic">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.zy.deskpic.widget.DeskWidget"
+            android:enabled="true"
+            android:exported="true"
+            android:label="图片">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+                <action android:name="com.zy.deskpic.widget.widget.next" />
+                <!--                <action android:name="com.zy.deskpic.widget.widget.refresh" />-->
+
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/desk_widget_fullscreen" />
+        </receiver>
+
+        <activity
+            android:name="com.zy.deskpic.NoLayoutActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+    </application>
+
+</manifest>
