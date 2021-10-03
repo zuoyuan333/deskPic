@@ -8,4 +8,5 @@
         2、在桌面插件中添加合适大小的插件。
         3、设置完毕，在图片的右下角可以点击切换到下一张。
 
+
 ![image](https://user-images.githubusercontent.com/19891319/135738725-9e88238e-22e4-4566-8dde-ccac8d4e2feb.png)
